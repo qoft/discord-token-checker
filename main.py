@@ -1,9 +1,7 @@
-import requests, threading, datetime
+import requests, threading
 from colorama import Fore
-
 lock = threading.Lock()
 
-def get_time(): now = datetime.datetime.now(); current_time = now.strftime("%H:%M:%S"); return current_time
 def success(text): lock.acquire(); print(f"{Fore.GREEN}  => {Fore.RESET}{text}{Fore.RESET}"); lock.release()
 def invalid(text): lock.acquire(); print(f"{Fore.RED}  =>{Fore.RED} {text}{Fore.RESET}"); lock.release()
 
